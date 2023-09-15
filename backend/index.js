@@ -7,8 +7,8 @@ const app = express();
 app.use(express.json());
 app.use(cors({ origin: true }));
 
-const CHAT_ENGINE_PROJECT_ID = "369b267d-58e0-4d3d-917e-eae263e50c8d";
-const CHAT_ENGINE_PRIVATE_KEY = "c2fbab06-7bd7-4f3d-93c9-c7655ae1da17";
+const CHAT_ENGINE_PROJECT_ID = "de5df909-3ad8-47cf-aa5d-34776f670903";
+const CHAT_ENGINE_PRIVATE_KEY = "f5993af1-b5a9-4cf0-8d7d-0ea77973af93";
 
 
 app.post("/authenticate", async (req, res) => {
@@ -18,7 +18,7 @@ app.post("/authenticate", async (req, res) => {
     const r = await axios.put(
       "https://api.chatengine.io/users/",
       { username: username, secret: username, first_name: username },
-      { headers: { "Private-Key": "c2fbab06-7bd7-4f3d-93c9-c7655ae1da17" } }
+      { headers: { "Private-Key": "f5993af1-b5a9-4cf0-8d7d-0ea77973af93" } }
     );
     return res.status(r.status).json(r.data);
   } catch (e) {
